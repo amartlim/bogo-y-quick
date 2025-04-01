@@ -25,11 +25,12 @@ def quick_sort(arr):
     right = [x for x in arr if x > pivot]   #mayores al pivote
     return quick_sort(left) + middle + quick_sort(right) #ordenar las sublistas y se unen con middle
 
+#medir tiempo timeit
 def measure_time(sort_function, arr, number=1):
     """Mide el tiempo de ejecución de un algoritmo de ordenación con timeit."""
     return timeit.timeit(lambda: sort_function(arr[:]), number=number) / number
 
-# Pra pedir la lista
+# Para pedir la lista
 user_input = input("Ingrese una lista de números separados por comas: ")
 user_list = [int(x) for x in user_input.split(',')]
 
